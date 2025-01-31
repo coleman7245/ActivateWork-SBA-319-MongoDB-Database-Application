@@ -21,4 +21,4 @@ function postGenre(req, res, next) {
 
 }
 
-export default {deleteGenre, getGenre, getGenres, patchGenre, postGenre};
+export {deleteGenre, getGenre, getGenres, patchGenre, postGenre};

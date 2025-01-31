@@ -21,4 +21,4 @@ function postTitle(req, res, next) {
 
 }
 
-export default {deleteTitle, getTitle, getTitles, patchTitle, postTitle};
+export {deleteTitle, getTitle, getTitles, patchTitle, postTitle};

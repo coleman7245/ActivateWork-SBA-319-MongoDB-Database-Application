@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 import express from "express";
+import companyModel from "../models/companies.js";
+import companies from "../data/companies.js";
 
 function deleteCompany(req, res, next) {
 
@@ -21,4 +23,4 @@ function postCompany(req, res, next) {
 
 }
 
-export default {deleteCompany, getCompanies, getCompany, patchCompany, postCompany};
+export {deleteCompany, getCompanies, getCompany, patchCompany, postCompany};

@@ -1,6 +1,5 @@
 import express from "express";
-
-import {getCompanies, getCompany, postCompany, patchCompany, deleteCompany} from "../controllers/companies";
+import {deleteCompany, getCompanies, getCompany, patchCompany, postCompany} from "../controllers/companies.js";
 
 const router = express.Router();
 

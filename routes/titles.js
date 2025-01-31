@@ -1,6 +1,6 @@
 import express from "express";
 
-import {getTitles, getTitle, postTitle, patchTitle, deleteTitle} from "../controllers/titles";
+import {getTitles, getTitle, postTitle, patchTitle, deleteTitle} from "../controllers/titles.js";
 
 const router = express.Router();
 

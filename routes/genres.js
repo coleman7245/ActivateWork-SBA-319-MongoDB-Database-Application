@@ -1,6 +1,6 @@
 import express from "express";
 
-import {getGenres, getGenre, postGenre, patchGenre, deleteGenre} from "../controllers/genres";
+import {getGenres, getGenre, postGenre, patchGenre, deleteGenre} from "../controllers/genres.js";
 
 const router = express.Router();
 
