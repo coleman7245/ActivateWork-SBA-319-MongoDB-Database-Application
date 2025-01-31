@@ -5,12 +5,12 @@ import {getTitles, getTitle, postTitle, patchTitle, deleteTitle} from "../contro
 const router = express.Router();
 
 router.route("/")
-    .get(getCompanies)
-    .post(postCompany);
+    .get(getTitles)
+    .post(postTitle);
 
 router.route("/:id")
-    .get(getCompany)
-    .patch(patchCompany)
-    .delete(deleteCompany);
+    .get(getTitle)
+    .patch(patchTitle)
+    .delete(deleteTitle);
 
 export default router;

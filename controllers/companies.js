@@ -8,7 +8,7 @@ function deleteCompany(req, res, next) {
 }
 
 function getCompanies(req, res) {
-
+    res.json(companies);
 }
 
 function getCompany(req, res) {
