@@ -1,7 +1,7 @@
 import Company from "../models/Company.js";
 
 async function deleteCompany(req, res) {
-    const company = await Company.deleteOne({"name" : req.params.name});
+    const company = await Company.deleteOne({"company_id" : req.params.id});
 
     res.json(company);
 };
@@ -13,14 +13,14 @@ async function getCompanies(req, res) {
 };
 
 async function getCompany(req, res) {
-    const company = await Company.find({"name" : req.params.name});
+    const company = await Company.find({"company_id" : req.params.id});
 
     if (company)
         res.json(company);
 };
 
 async function patchCompany(req, res) {
-    const company = await Company.updateOne({"name" : req.params.name}, {
+    const company = await Company.updateOne({"company_id" : req.params.id}, {
         $set : {"name" : req.body.name, "country" : req.body.country, "active" : req.body.active}
     });
 
@@ -28,8 +28,8 @@ async function patchCompany(req, res) {
 };
 
 async function postCompany(req, res) {
-    const {name, country, active} = req.body;
-    const company = new Company({name, country, active});
+    const {company_id, name, country, active} = req.body;
+    const company = new Company({company_id, name, country, active});
 
     await company.save();
 

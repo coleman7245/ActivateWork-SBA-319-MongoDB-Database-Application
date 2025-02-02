@@ -7,7 +7,7 @@ router.route("/")
     .get(getCompanies)
     .post(postCompany);
 
-router.route("/:name")
+router.route("/:id")
     .get(getCompany)
     .patch(patchCompany)
     .delete(deleteCompany);

@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const genreSchema = new mongoose.Schema({
+    genre_id : {
+        type : String,
+        unique : true,
+        required : true
+    },
     name : {
         type : String,
         unique : true,

@@ -1,26 +1,35 @@
 import Title from "../models/Title.js";
 
-function deleteTitle(req, res, next) {
-    
+async function deleteTitle(req, res, next) {
+    const title = await Title.deleteOne({"title_id" : req.params.id});
+
+    res.json(title);
 }
 
-function getTitle(req, res) {
+async function getTitle(req, res) {
+    const title = await Title.find({"title_id" : req.params.id});
 
+    if (title)
+        res.json(title);
 }
 
 async function getTitles(req, res) {
     const titles = await Title.find().limit(3);
 
-    return res.json(titles);
+    res.json(titles);
 };
 
-function patchTitle(req, res, next) {
+async function patchTitle(req, res, next) {
+    const title = await Title.updateOne({"title_id" : req.params.id}, {
+        $set : {"name" : req.body.name, "company" : req.body.company, "genre" : req.body.genre}
+    });
 
+    res.json(title);
 }
 
 async function postTitle(req, res) {
-    const {name, company, genre} = req.body;
-    const title = new Title({name, company, genre});
+    const {title_id, name, company, genre} = req.body;
+    const title = new Title({title_id, name, company, genre});
 
     await title.save();
     res.json(title);

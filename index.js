@@ -11,9 +11,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/api/companies", companies);
-app.use("/api/genres", genres);
-app.use("/api/titles", titles);
+app.use("/video_games/companies", companies);
+app.use("/video_games/genres", genres);
+app.use("/video_games/titles", titles);
 
 mongoose
     .connect(process.env.MONGO_URI)

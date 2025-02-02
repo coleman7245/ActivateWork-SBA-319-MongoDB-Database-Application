@@ -1,15 +1,13 @@
 import Genre from "../models/Genre.js";
 
 async function deleteGenre(req, res) {
-    console.log(req.params);
-
-    const genre = await Genre.deleteOne({"name" : req.params.name});
+    const genre = await Genre.deleteOne({"genre_id" : req.params.id});
 
     res.json(genre);
 }
 
 async function getGenre(req, res) {
-    const genre = await Genre.find({"name" : req.params.name});
+    const genre = await Genre.find({"genre_id" : req.params.id});
 
     if (genre)
         res.json(genre);
@@ -22,7 +20,7 @@ async function getGenres(req, res) {
 }
 
 async function patchGenre(req, res) {
-    const genre = await Genre.updateOne({"name" : req.params.name}, {
+    const genre = await Genre.updateOne({"genre_id" : req.params.id}, {
         $set : {"name" : req.body.name, "description" : req.body.country}
     });
 
@@ -30,10 +28,8 @@ async function patchGenre(req, res) {
 }
 
 async function postGenre(req, res) {
-    const {name, description} = req.body;
-    console.log(req.body);
-    const genre = new Genre({name, description});
-    console.log(genre);
+    const {genre_id, name, description} = req.body;
+    const genre = new Genre({genre_id, name, description});
 
     await Genre.insertMany([genre]);
 
