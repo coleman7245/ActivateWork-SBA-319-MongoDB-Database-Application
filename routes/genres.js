@@ -8,7 +8,7 @@ router.route("/")
     .get(getGenres)
     .post(postGenre);
 
-router.route("/:id")
+router.route("/:name")
     .get(getGenre)
     .patch(patchGenre)
     .delete(deleteGenre);

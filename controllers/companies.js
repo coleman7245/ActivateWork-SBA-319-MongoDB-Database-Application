@@ -6,10 +6,10 @@ async function deleteCompany(req, res) {
     res.json(company);
 };
 
-async function getCompanies(res) {
+async function getCompanies(req, res) {
     const companies = await Company.find().limit(3);
 
-    return res.json(companies);
+    res.json(companies);
 };
 
 async function getCompany(req, res) {

@@ -8,7 +8,7 @@ router.route("/")
     .get(getTitles)
     .post(postTitle);
 
-router.route("/:id")
+router.route("/:name")
     .get(getTitle)
     .patch(patchTitle)
     .delete(deleteTitle);

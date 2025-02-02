@@ -11,7 +11,7 @@ function getTitle(req, res) {
 async function getTitles(req, res) {
     const titles = await Title.find().limit(3);
 
-    res.json(titles);
+    return res.json(titles);
 };
 
 function patchTitle(req, res, next) {
