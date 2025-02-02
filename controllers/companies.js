@@ -1,21 +1,30 @@
 import Company from "../models/Company.js";
 
-function deleteCompany(req, res, next) {
+async function deleteCompany(req, res) {
+    const company = await Company.deleteOne({"name" : req.params.name});
 
+    res.json(company);
 };
 
-async function getCompanies(req, res) {
+async function getCompanies(res) {
     const companies = await Company.find().limit(3);
 
     return res.json(companies);
 };
 
-function getCompany(req, res) {
+async function getCompany(req, res) {
+    const company = await Company.find({"name" : req.params.name});
 
+    if (company)
+        res.json(company);
 };
 
-function patchCompany(req, res, next) {
+async function patchCompany(req, res) {
+    const company = await Company.updateOne({"name" : req.params.name}, {
+        $set : {"name" : req.body.name, "country" : req.body.country, "active" : req.body.active}
+    });
 
+    res.json(company);
 };
 
 async function postCompany(req, res) {
