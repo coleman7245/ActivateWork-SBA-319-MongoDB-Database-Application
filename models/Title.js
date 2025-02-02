@@ -1,26 +1,21 @@
 import mongoose from "mongoose";
 
 const titleSchema = new mongoose.Schema({
-    id : {
-        type : Number,
-        unique : true,
-        require : true
-    },
     name : {
         type : String,
         unique : true,
         required : true
     },
-    companyId : {
+    company : {
         type : String,
         unique : true,
         required : true
     },
-    genreId : {
-        type : String,
-        unique : true,
-        required : true
+    genre : {
+        type : String
     }
 });
 
-export default mongoose.model("Title", titleSchema);
+const Title = mongoose.model("Title", titleSchema);
+
+export default Title;

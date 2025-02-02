@@ -4,3 +4,5 @@ function error(status, message) {
 
     return error;
 }
+
+export default error;
