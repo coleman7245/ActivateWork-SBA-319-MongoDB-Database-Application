@@ -7,7 +7,7 @@ async function deleteCompany(req, res) {
 };
 
 async function getCompanies(req, res) {
-    const companies = await Company.find().limit(3);
+    const companies = await Company.find();
 
     res.json(companies);
 };

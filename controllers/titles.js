@@ -14,7 +14,7 @@ async function getTitle(req, res) {
 }
 
 async function getTitles(req, res) {
-    const titles = await Title.find().limit(3);
+    const titles = await Title.find();
 
     res.json(titles);
 };

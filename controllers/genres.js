@@ -14,14 +14,14 @@ async function getGenre(req, res) {
 };
 
 async function getGenres(req, res) {
-    const genre = await Genre.find().limit(3);
+    const genre = await Genre.find();
 
     res.json(genre);
 }
 
 async function patchGenre(req, res) {
     const genre = await Genre.updateOne({"genre_id" : req.params.id}, {
-        $set : {"name" : req.body.name, "description" : req.body.country}
+        $set : {"name" : req.body.name, "description" : req.body.description}
     });
 
     res.json(genre);
