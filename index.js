@@ -20,9 +20,15 @@ mongoose
     .then(console.log("MongoDB connected!"));
 
 app
-    .route("/api")
+    .route("/video_games")
     .get((req, res) => {
-        res.send("Yeah.");
+        let categories = {categories : [
+            "company",
+            "genre",
+            "title",
+        ]};
+
+        res.send(categories);
     });
 
 app.listen(process.env.PORT, () => {
