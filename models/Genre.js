@@ -16,6 +16,8 @@ const genreSchema = new mongoose.Schema({
     }
 });
 
+genreSchema.index({genre_id : "text"});
+
 const Genre = mongoose.model("Genre", genreSchema);
 
 export default Genre;

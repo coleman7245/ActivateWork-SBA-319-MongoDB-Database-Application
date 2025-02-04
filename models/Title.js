@@ -21,6 +21,8 @@ const titleSchema = new mongoose.Schema({
     }
 });
 
+titleSchema.index({title_id : "text"});
+
 const Title = mongoose.model("Title", titleSchema);
 
 export default Title;
