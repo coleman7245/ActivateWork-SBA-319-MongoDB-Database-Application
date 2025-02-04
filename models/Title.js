@@ -8,12 +8,10 @@ const titleSchema = new mongoose.Schema({
     },
     name : {
         type : String,
-        unique : true,
         required : true
     },
     company : {
         type : String,
-        unique : true,
         required : true
     },
     genre : {

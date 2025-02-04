@@ -43,5 +43,5 @@ Title:
     "title_id": "something",
     "name": "Something",
     "company": "Something",
-    "genre": "Something",
+    "genre": "Something"
 }
